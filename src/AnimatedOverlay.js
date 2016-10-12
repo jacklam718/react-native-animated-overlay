@@ -50,9 +50,12 @@ class AnimatedOverlay extends Component {
   }
 
   render() {
-    const { onPress, pointerEvents } = this.props;
+    let { pointerEvents } = this.props;
+    const { onPress, showOverlay } = this.props;
     const backgroundColor = { backgroundColor: this.props.backgroundColor };
     const opacity = { opacity: this.state.opacity };
+
+    if (!pointerEvents) pointerEvents = showOverlay ? 'auto' : 'none';
 
     return (
       <Animated.View
