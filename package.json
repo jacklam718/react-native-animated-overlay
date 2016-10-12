@@ -1,9 +1,27 @@
 {
   "name": "react-native-animated-overlay",
   "version": "0.0.1",
+  "description": "React Native Animated Overlay support IOS & Android.",
   "main": "index.js",
-  "author": "Jack (jacklam718@gmail.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacklam718/react-native-animated-overlay.git"
+  },
+  "keywords": [
+    "overlay",
+    "react overlay",
+    "react-native",
+    "react-native-animated-overlay",
+    "react-native-dialog",
+    "react native overlay",
+    "animated-overlay",
+    "react-component",
+    "ios",
+    "android"
+  ],
+  "author": "jacklam <jacklam718@gmail.com> (https://github.com/jacklam718)",
   "license": "MIT",
+  "homepage": "https://github.com/jacklam718/react-native-animated-overlay/blob/master/README.md",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^7.0.0",
