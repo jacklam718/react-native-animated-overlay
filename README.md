@@ -1,6 +1,10 @@
 ## React Native Animated Overlay
 React Native Animated Overlay for iOS & Android.
 
+This is component provided a very basic overlay view.
+
+![Example](https://jacklam718.github.io/react-native-animated-overlay/assets/video/react-native-animated-overlay.gif)
+
 ## Installation
 
 `npm install --save react-native-animated-overlay`
@@ -19,7 +23,7 @@ import AnimatedOverlay from 'react-native-animated-overlay';
   backgroundColor='#000'
   opacity={0.5}
   animationDuration={200}
-  showOverlay={false}
+  overlayShow={false}
 />
 ```
 
@@ -31,5 +35,5 @@ import AnimatedOverlay from 'react-native-animated-overlay';
 | `backgroundColor` | `String` | #000 |
 | `opacity` | `Number` | 0.5 |
 | `animationDuration` | `Number` | 200 |
-| `showOverlay` | `Bool` | false |
+| `overlayShow` | `Bool` | false |
 | `pointerEvents` | `String` | |

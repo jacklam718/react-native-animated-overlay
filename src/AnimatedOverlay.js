@@ -11,7 +11,7 @@ class AnimatedOverlay extends Component {
     backgroundColor: string;
     opacity: number;
     animationDuration: number;
-    showOverlay: boolean;
+    overlayShow: boolean;
     pointerEvents: string;
   }
 
@@ -19,7 +19,7 @@ class AnimatedOverlay extends Component {
     backgroundColor: '#000',
     opacity: 0.5,
     animationDuration: 200,
-    showOverlay: false,
+    overlayShow: false,
   }
 
   constructor(props) {
@@ -30,14 +30,14 @@ class AnimatedOverlay extends Component {
   }
 
   componentDidMount() {
-    if (this.props.showOverlay) {
+    if (this.props.overlayShow) {
       this.toValue(this.props.opacity);
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.showOverlay !== nextProps.showOverlay) {
-      const toValue = nextProps.showOverlay ? nextProps.opacity : 0;
+    if (this.props.overlayShow !== nextProps.overlayShow) {
+      const toValue = nextProps.overlayShow ? nextProps.opacity : 0;
       this.toValue(toValue);
     }
   }
@@ -51,11 +51,11 @@ class AnimatedOverlay extends Component {
 
   render() {
     let { pointerEvents } = this.props;
-    const { onPress, showOverlay } = this.props;
+    const { onPress, overlayShow } = this.props;
     const backgroundColor = { backgroundColor: this.props.backgroundColor };
     const opacity = { opacity: this.state.opacity };
 
-    if (!pointerEvents) pointerEvents = showOverlay ? 'auto' : 'none';
+    if (!pointerEvents) pointerEvents = overlayShow ? 'auto' : 'none';
 
     return (
       <Animated.View
