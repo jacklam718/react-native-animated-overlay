@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Dimensions, TouchableOpacity, Animated } from 'react-native';
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
