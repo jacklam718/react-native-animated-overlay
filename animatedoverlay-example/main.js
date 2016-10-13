@@ -34,7 +34,7 @@ class App extends Component {
         />
         <AnimatedOverlay
           onPress={this.closeOverlay}
-          showOverlay={this.state.overlayShow}
+          overlayShow={this.state.overlayShow}
         />
       </View>
     );

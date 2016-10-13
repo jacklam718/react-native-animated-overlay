@@ -24,29 +24,20 @@ class AnimatedOverlay extends Component {
 
   constructor(props) {
     super(props);
+    const toValue = props.overlayShow ? props.opacity : 0;
     this.state = {
-      opacity: new Animated.Value(0),
+      opacity: new Animated.Value(toValue),
     };
-  }
-
-  componentDidMount() {
-    if (this.props.overlayShow) {
-      this.toValue(this.props.opacity);
-    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.overlayShow !== nextProps.overlayShow) {
       const toValue = nextProps.overlayShow ? nextProps.opacity : 0;
-      this.toValue(toValue);
+      Animated.timing(this.state.opacity, {
+        toValue,
+        duration: this.props.animationDuration,
+      }).start();
     }
-  }
-
-  toValue(toValue) {
-    Animated.timing(this.state.opacity, {
-      toValue,
-      duration: this.props.animationDuration,
-    }).start();
   }
 
   render() {
