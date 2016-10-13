@@ -9,6 +9,6 @@
     "exponent": "^10.0.4",
     "react": "~15.3.2",
     "react-native": "github:exponentjs/react-native#sdk-10.1.2",
-    "react-native-animated-overlay": "file:///Users/jacklam/workspace/react-native-animated-overlay"
+    "react-native-animated-overlay": "../"
   }
 }
