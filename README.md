@@ -3,6 +3,8 @@ React Native Animated Overlay for iOS & Android.
 
 This is component provided a very basic overlay view.
 
+[Try it with Exponent](https://exp.host/@jacklam718/animatedoverlay-example)
+
 ![Example](https://jacklam718.github.io/react-native-animated-overlay/assets/video/react-native-animated-overlay.gif)
 
 ## Installation
