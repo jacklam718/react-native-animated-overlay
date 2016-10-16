@@ -31,7 +31,7 @@ import AnimatedOverlay from 'react-native-animated-overlay';
 
 ## Props
 ### AnimatedOverlay
-| Attribute | Type | Default | Note |
+| Prop | Type | Default | Note |
 |---|---|---|---|
 | `onPress` | `Function` | |
 | `backgroundColor` | `String` | #000 |
