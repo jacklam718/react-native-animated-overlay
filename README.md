@@ -1,7 +1,7 @@
 ## React Native Animated Overlay
 React Native Animated Overlay for iOS & Android.
 
-This is component provided a very basic overlay view.
+This component just provide a very basic overlay view for you to build something on top of this component.
 
 [Try it with Exponent](https://exp.host/@jacklam718/animatedoverlay-example)
 
@@ -16,17 +16,47 @@ This is component provided a very basic overlay view.
 
 ## Usage
 ```javascript
+import Raect, { Component } from 'react';
 import AnimatedOverlay from 'react-native-animated-overlay';
 
-<AnimatedOverlay
-  onPress={() => {
+class AnimatedOverlayExample extends Component {
+  constructor(props) {
+    super(props);
 
-  }}
-  backgroundColor='#000'
-  opacity={0.5}
-  animationDuration={200}
-  overlayShow={false}
-/>
+    this.state = {
+      overlayShow: false,
+    };
+
+    this.openOverlay = this.openOverlay.bind(this);
+    this.closeOverlay = this.closeOverlay.bind(this);
+  }
+
+  openOverlay() {
+    this.setState({overlayShow: true});
+  }
+
+  closeOverlay() {
+    this.setState({overlayShow: false});
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Button
+          text="Open Overlay"
+          onPress={this.openOverlay}
+        />
+        <AnimatedOverlay
+          onPress={this.closeOverlay}
+          backgroundColor='#000'
+          opacity={0.5}
+          animationDuration={200}
+          overlayShow={this.state.overlayShow}
+        />
+      </View>
+    );
+  }
+}
 ```
 
 ## Props
