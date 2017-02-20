@@ -50,7 +50,7 @@ class AnimatedOverlayExample extends Component {
           onPress={this.closeOverlay}
           backgroundColor='#000'
           opacity={0.5}
-          animationDuration={200}
+          duration={200}
           overlayShow={this.state.overlayShow}
         />
       </View>
@@ -63,9 +63,11 @@ class AnimatedOverlayExample extends Component {
 ### AnimatedOverlay
 | Prop | Type | Default | Note |
 |---|---|---|---|
-| `onPress` | `Function` | |
+| `onPress` | `Function` | () => {} |
+| `onAnimationFinished` | `Function` |  () => {} |
 | `backgroundColor` | `String` | #000 |
 | `opacity` | `Number` | 0.5 |
-| `animationDuration` | `Number` | 200 |
+| `duration` | `Number` | 200 |
 | `overlayShow` | `Bool` | false |
-| `pointerEvents` | `String` | |
+| `pointerEvents` | `string` | null |
+| `initValue` | `number` | 0 |
