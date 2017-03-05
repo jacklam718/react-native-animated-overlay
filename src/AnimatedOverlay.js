@@ -57,6 +57,7 @@ class AnimatedOverlay extends Component {
     Animated.timing(this.state.opacity, {
       toValue,
       duration,
+      useNativeDriver: true,
     }).start(() => {
       onAnimationFinished(toValue);
     });
