@@ -71,4 +71,5 @@ class AnimatedOverlayExample extends Component {
 | `overlayShow?` | `Bool` | `false` |
 | `pointerEvents?` | `string` | `null` |
 | `initValue?` | `number` | `0` |
+| `style?` | `any` | `null` |
 | `children?` | `any` | `null` |

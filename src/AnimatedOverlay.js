@@ -26,6 +26,7 @@ class AnimatedOverlay extends Component {
     pointerEvents?: string;
     initValue?: number;
     onAnimationFinished?: (value: number) => void;
+    style?: any,
     children?: any;
   }
 
@@ -38,6 +39,7 @@ class AnimatedOverlay extends Component {
     overlayShow: false,
     initValue: 0,
     onAnimationFinished: () => {},
+    style: null,
     children: null,
   }
 
@@ -70,7 +72,6 @@ class AnimatedOverlay extends Component {
     Animated.timing(this.state.opacity, {
       toValue,
       duration,
-      useNativeDriver: true,
     }).start(() => {
       onAnimationFinished(toValue);
     });
@@ -78,7 +79,7 @@ class AnimatedOverlay extends Component {
 
   render() {
     let { pointerEvents } = this.props;
-    const { onPress, children } = this.props;
+    const { onPress, style, children } = this.props;
     const backgroundColor = { backgroundColor: this.props.backgroundColor };
     const opacity = { opacity: this.state.opacity };
 
@@ -87,7 +88,7 @@ class AnimatedOverlay extends Component {
     return (
       <Animated.View
         pointerEvents={pointerEvents}
-        style={[styles.overlay, backgroundColor, opacity]}
+        style={[styles.overlay, backgroundColor, style, opacity]}
       >
         <TouchableOpacity onPress={onPress} style={[styles.overlay]} />
         {children}
