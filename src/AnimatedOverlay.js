@@ -5,6 +5,17 @@ import { StyleSheet, Dimensions, TouchableOpacity, Animated } from 'react-native
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
 
+const styles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    top: 0,
+    left: 0,
+    width: WIDTH,
+    height: HEIGHT,
+    position: 'absolute',
+  },
+});
+
 class AnimatedOverlay extends Component {
   props: {
     onPress?: () => void;
@@ -81,16 +92,5 @@ class AnimatedOverlay extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  overlay: {
-    flex: 1,
-    top: 0,
-    left: 0,
-    width: WIDTH,
-    height: HEIGHT,
-    position: 'absolute',
-  },
-});
 
 export default AnimatedOverlay;
