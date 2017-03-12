@@ -3,15 +3,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, Dimensions, TouchableOpacity, Animated } from 'react-native';
 
-const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
     top: 0,
     left: 0,
-    width: WIDTH,
-    height: HEIGHT,
     position: 'absolute',
   },
 });
@@ -82,15 +78,19 @@ class AnimatedOverlay extends Component {
     const { onPress, style, children } = this.props;
     const backgroundColor = { backgroundColor: this.props.backgroundColor };
     const opacity = { opacity: this.state.opacity };
+    const size = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    };
 
     if (!pointerEvents) pointerEvents = this.state.overlayShow ? 'auto' : 'none';
 
     return (
       <Animated.View
         pointerEvents={pointerEvents}
-        style={[styles.overlay, backgroundColor, style, opacity]}
+        style={[styles.overlay, backgroundColor, size, style, opacity]}
       >
-        <TouchableOpacity onPress={onPress} style={[styles.overlay]} />
+        <TouchableOpacity onPress={onPress} style={[styles.overlay, size]} />
         {children}
       </Animated.View>
     );
