@@ -26,6 +26,7 @@ class AnimatedOverlay extends Component {
     pointerEvents?: string;
     initValue?: number;
     onAnimationFinished?: (value: number) => void;
+    children?: any;
   }
 
   static defaultProps = {
@@ -37,6 +38,7 @@ class AnimatedOverlay extends Component {
     overlayShow: false,
     initValue: 0,
     onAnimationFinished: () => {},
+    children: null,
   }
 
   constructor(props) {
@@ -76,7 +78,7 @@ class AnimatedOverlay extends Component {
 
   render() {
     let { pointerEvents } = this.props;
-    const { onPress } = this.props;
+    const { onPress, children } = this.props;
     const backgroundColor = { backgroundColor: this.props.backgroundColor };
     const opacity = { opacity: this.state.opacity };
 
@@ -88,6 +90,7 @@ class AnimatedOverlay extends Component {
         style={[styles.overlay, backgroundColor, opacity]}
       >
         <TouchableOpacity onPress={onPress} style={[styles.overlay]} />
+        {children}
       </Animated.View>
     );
   }

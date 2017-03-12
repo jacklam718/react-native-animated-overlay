@@ -63,11 +63,12 @@ class AnimatedOverlayExample extends Component {
 ### AnimatedOverlay
 | Prop | Type | Default | Note |
 |---|---|---|---|
-| `onPress` | `Function` | () => {} |
-| `onAnimationFinished` | `Function` |  () => {} |
-| `backgroundColor` | `String` | #000 |
-| `opacity` | `Number` | 0.5 |
-| `duration` | `Number` | 200 |
-| `overlayShow` | `Bool` | false |
-| `pointerEvents` | `string` | null |
-| `initValue` | `number` | 0 |
+| `onPress?` | `Function` | `() => {}` |
+| `onAnimationFinished?` | `Function` |  `() => {}` |
+| `backgroundColor?` | `String` | `#000` |
+| `opacity?` | `Number` | `0.5` |
+| `duration?` | `Number` | `200` |
+| `overlayShow?` | `Bool` | `false` |
+| `pointerEvents?` | `string` | `null` |
+| `initValue?` | `number` | `0` |
+| `children?` | `any` | `null` |
