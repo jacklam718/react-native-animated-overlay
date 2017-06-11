@@ -22,7 +22,8 @@ class AnimatedOverlay extends Component {
     pointerEvents?: string;
     initValue?: number;
     onAnimationFinished?: (value: number) => void;
-    style?: any,
+    style?: any;
+    useNativeDriver: boolean;
     children?: any;
   }
 
@@ -36,6 +37,7 @@ class AnimatedOverlay extends Component {
     initValue: 0,
     onAnimationFinished: () => {},
     style: null,
+    useNativeDriver: false,
     children: null,
   }
 
@@ -63,11 +65,19 @@ class AnimatedOverlay extends Component {
   }
 
   doAnimation() {
-    const { overlayShow, opacity, duration, onAnimationFinished } = this.props;
+    const {
+      overlayShow,
+      opacity,
+      duration,
+      onAnimationFinished,
+      useNativeDriver,
+    } = this.props;
+
     const toValue = overlayShow ? opacity : 0;
     Animated.timing(this.state.opacity, {
       toValue,
       duration,
+      useNativeDriver,
     }).start(() => {
       onAnimationFinished(toValue);
     });

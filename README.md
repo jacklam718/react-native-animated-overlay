@@ -72,4 +72,5 @@ class AnimatedOverlayExample extends Component {
 | `pointerEvents?` | `string` | `null` |
 | `initValue?` | `number` | `0` |
 | `style?` | `any` | `null` |
+| `useNativeDriver?` | `boolean` | `false` |
 | `children?` | `any` | `null` |
