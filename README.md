@@ -16,7 +16,7 @@ This component just provide a very basic overlay view for you to build something
 
 ## Usage
 ```javascript
-import Raect, { Component } from 'react';
+import React, { Component } from 'react';
 import AnimatedOverlay from 'react-native-animated-overlay';
 
 class AnimatedOverlayExample extends Component {
